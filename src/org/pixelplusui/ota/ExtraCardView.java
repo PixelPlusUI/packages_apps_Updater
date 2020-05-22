@@ -2,7 +2,6 @@ package org.pixelplusui.ota;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -45,25 +44,7 @@ public class ExtraCardView extends CardView {
         }
     }
 
-    @Override
-    public void setClickable(boolean clickable) {
-        super.setClickable(clickable);
-        int[] attrs = new int[]{R.attr.selectableItemBackground};
-        TypedArray typedArray = getContext().obtainStyledAttributes(attrs);
-        int backgroundResource = typedArray.getResourceId(0, 0);
-        setForeground(getResources().getDrawable(backgroundResource, getContext().getTheme()));
-        typedArray.recycle();
-    }
-
     public void setSummary(String summary) {
         summaryView.setText(summary);
-    }
-
-    public void setTitle(String title) {
-        titleView.setText(title);
-    }
-
-    public void setImage(Drawable image) {
-        imageView.setImageDrawable(image);
     }
 }

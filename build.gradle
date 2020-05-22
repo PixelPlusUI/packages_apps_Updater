@@ -73,5 +73,4 @@ dependencies {
     implementation 'androidx.preference:preference:1.1.0'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
-    implementation 'com.google.code.gson:gson:2.8.6'
 }
