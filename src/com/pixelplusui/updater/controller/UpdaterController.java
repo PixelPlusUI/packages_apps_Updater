@@ -70,7 +70,7 @@ public class UpdaterController {
         return sUpdaterController;
     }
 
-    protected static synchronized UpdaterController getInstance(Context context) {
+    public static synchronized UpdaterController getInstance(Context context) {
         if (sUpdaterController == null) {
             sUpdaterController = new UpdaterController(context);
         }
@@ -324,7 +324,7 @@ public class UpdaterController {
         return addUpdate(update, true);
     }
 
-    private boolean addUpdate(final UpdateInfo updateInfo, boolean availableOnline) {
+    public boolean addUpdate(final UpdateInfo updateInfo, boolean availableOnline) {
         Log.d(TAG, "Adding download: " + updateInfo.getDownloadId());
         if (mDownloads.containsKey(updateInfo.getDownloadId())) {
             Log.d(TAG, "Download (" + updateInfo.getDownloadId() + ") already added");
