@@ -31,6 +31,7 @@ public class UpdateBase implements UpdateBaseInfo {
     private String mMaintainer;
     private String mMaintainerUrl;
     private String mHash;
+    private boolean mIsIncremental;
 
     UpdateBase() {
     }
@@ -159,5 +160,14 @@ public class UpdateBase implements UpdateBaseInfo {
 
     public void setHash(String hash) {
         mHash = hash;
+    }
+
+    @Override
+    public boolean getIsIncremental() {
+        return mIsIncremental;
+    }
+
+    public void setHash(boolean isIncremental) {
+        mIsIncremental = isIncremental;
     }
 }
