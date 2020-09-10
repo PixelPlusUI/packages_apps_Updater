@@ -16,8 +16,6 @@
  */
 package org.pixelplusui.ota.model;
 
-import java.util.ArrayList;
-
 public class UpdateBase implements UpdateBaseInfo {
 
     private String mName;
@@ -30,7 +28,8 @@ public class UpdateBase implements UpdateBaseInfo {
     private String mForumUrl;
     private String mWebsiteUrl;
     private String mNewsUrl;
-    private ArrayList<MaintainerInfo> mMaintainers;
+    private String mMaintainer;
+    private String mMaintainerUrl;
     private String mHash;
     private boolean mIsIncremental;
     private boolean mHasIncremental;
@@ -138,12 +137,21 @@ public class UpdateBase implements UpdateBaseInfo {
     }
 
     @Override
-    public ArrayList<MaintainerInfo> getMaintainers() {
-        return mMaintainers;
+    public String getMaintainer() {
+        return mMaintainer;
     }
 
-    public void setMaintainers(ArrayList<MaintainerInfo> maintainers) {
-        mMaintainers = maintainers;
+    public void setMaintainer(String maintainer) {
+        mMaintainer = maintainer;
+    }
+
+    @Override
+    public String getMaintainerUrl() {
+        return mMaintainerUrl;
+    }
+
+    public void setMaintainerUrl(String maintainerUrl) {
+        mMaintainerUrl = maintainerUrl;
     }
 
     @Override

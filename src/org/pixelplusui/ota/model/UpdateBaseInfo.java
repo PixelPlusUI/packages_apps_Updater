@@ -16,8 +16,6 @@
  */
 package org.pixelplusui.ota.model;
 
-import java.util.ArrayList;
-
 public interface UpdateBaseInfo {
     String getName();
 
@@ -39,7 +37,9 @@ public interface UpdateBaseInfo {
 
     String getNewsUrl();
 
-    ArrayList<MaintainerInfo> getMaintainers();
+    String getMaintainer();
+
+    String getMaintainerUrl();
 
     String getHash();
 

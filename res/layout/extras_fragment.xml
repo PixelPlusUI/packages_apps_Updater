@@ -12,17 +12,28 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <LinearLayout
+        <org.pixelexperience.ota.ExtraCardView
+            android:id="@+id/maintainer_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/maintainers"
-            android:orientation="vertical"></LinearLayout>
+            android:layout_margin="10dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/cardview_background"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:contentPaddingBottom="16dp"
+            app:contentPaddingLeft="16dp"
+            app:contentPaddingRight="16dp"
+            app:contentPaddingTop="16dp"
+            extra_card_view:image="@drawable/ic_maintainers_icon"
+            extra_card_view:title="@string/maintainer_info_title" />
 
         <org.pixelplusui.ota.ExtraCardView
             android:id="@+id/donate_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/extra_card_layout_margin"
+            android:layout_margin="10dp"
             android:foreground="?attr/selectableItemBackground"
             android:visibility="gone"
             app:cardBackgroundColor="@color/cardview_background"
@@ -40,7 +51,7 @@
             android:id="@+id/forum_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/extra_card_layout_margin"
+            android:layout_margin="10dp"
             android:foreground="?attr/selectableItemBackground"
             android:visibility="gone"
             app:cardBackgroundColor="@color/cardview_background"
@@ -58,7 +69,7 @@
             android:id="@+id/website_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/extra_card_layout_margin"
+            android:layout_margin="10dp"
             android:foreground="?attr/selectableItemBackground"
             android:visibility="gone"
             app:cardBackgroundColor="@color/cardview_background"
@@ -76,7 +87,7 @@
             android:id="@+id/news_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/extra_card_layout_margin"
+            android:layout_margin="10dp"
             android:foreground="?attr/selectableItemBackground"
             android:visibility="gone"
             app:cardBackgroundColor="@color/cardview_background"

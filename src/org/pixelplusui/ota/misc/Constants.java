@@ -35,7 +35,6 @@ public final class Constants {
     static final String PROP_BUILD_VERSION = "org.pixelplusui.version";
     static final String OTA_URL = "https://raw.githubusercontent.com/PixelPlusUI-Devices/official_devices/master/builds/%s.json";
     static final String OTA_CI_URL = "https://raw.githubusercontent.com/PixelPlusUI-Devices/official_devices/master/builds/%s.json";
-    static final String MAINTAINER_URL = "https://pixelplusui.github.io/team/%s.html";
     static final String DOWNLOAD_WEBPAGE_URL = "https://raw.githubusercontent.com/PixelPlusUI-Devices/official_devices/master/changelogs/%s/%s.txt";
     static final String EXPORT_PATH = "PixelPlusUI-Updates/";
 }
