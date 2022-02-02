@@ -1,12 +1,12 @@
 #!/bin/sh
 
-updates_dir=/data/crdroid_updates
+updates_dir=/data/system_updates
 
 if [ ! -f "$1" ]; then
    echo "Usage: $0 ZIP [UNVERIFIED]"
    echo "Push ZIP to $updates_dir and add it to Updater"
    echo
-   echo "The name of ZIP is assumed to have crDroidAndroid-VERSION-DATE-TYPE-* as format"
+   echo "The name of ZIP is assumed to have PixelPlusUi-VERSION-DATE-TYPE-* as format"
    echo "If UNVERIFIED is set, the app will verify the update"
    exit
 fi
