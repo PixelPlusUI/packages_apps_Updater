@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.crdroid.updater"
+    package="com.pixelplusui.updater"
     android:versionCode="1">
 
     <uses-permission android:name="android.permission.ACCESS_CACHE_FILESYSTEM" />
@@ -22,7 +22,7 @@
         android:usesCleartextTraffic="false">
 
         <activity
-            android:name=".UpdatesActivity"
+            android:name="com.pixelplusui.updater.UpdatesActivity"
             android:excludeFromRecents="true"
             android:label="@string/display_name"
             android:exported="true"
@@ -42,16 +42,16 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".controller.UpdaterService" />
-        <service android:name=".ExportUpdateService" />
+        <service android:name="com.pixelplusui.updater.controller.UpdaterService" />
+        <service android:name="com.pixelplusui.updater.ExportUpdateService" />
 
-        <receiver android:name=".UpdaterReceiver" android:exported="false">
+        <receiver android:name="com.pixelplusui.updater.UpdaterReceiver" android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
 
-        <receiver android:name=".UpdatesCheckReceiver" android:exported="true">
+        <receiver android:name="com.pixelplusui.updater.UpdatesCheckReceiver" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>

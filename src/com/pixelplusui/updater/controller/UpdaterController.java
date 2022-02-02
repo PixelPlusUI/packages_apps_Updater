@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.updater.controller;
+package com.pixelplusui.updater.controller;
 
 import android.content.Context;
 import android.content.Intent;
@@ -24,12 +24,12 @@ import android.util.Log;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
-import com.crdroid.updater.UpdatesDbHelper;
-import com.crdroid.updater.download.DownloadClient;
-import com.crdroid.updater.misc.Utils;
-import com.crdroid.updater.model.Update;
-import com.crdroid.updater.model.UpdateInfo;
-import com.crdroid.updater.model.UpdateStatus;
+import com.pixelplusui.updater.UpdatesDbHelper;
+import com.pixelplusui.updater.download.DownloadClient;
+import com.pixelplusui.updater.misc.Utils;
+import com.pixelplusui.updater.model.Update;
+import com.pixelplusui.updater.model.UpdateInfo;
+import com.pixelplusui.updater.model.UpdateStatus;
 
 import java.io.File;
 import java.io.IOException;

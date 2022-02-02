@@ -13,20 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.updater.model;
+package com.pixelplusui.updater;
 
-public interface UpdateBaseInfo {
-    String getName();
+import androidx.appcompat.app.AppCompatActivity;
 
-    String getDownloadId();
-
-    long getTimestamp();
-
-    String getType();
-
-    String getVersion();
-
-    String getDownloadUrl();
-
-    long getFileSize();
+public abstract class UpdatesListActivity extends AppCompatActivity {
+    public abstract void showSnackbar(int stringId, int duration);
 }

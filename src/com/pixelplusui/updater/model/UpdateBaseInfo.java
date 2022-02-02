@@ -13,29 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.updater.model;
+package com.pixelplusui.updater.model;
 
-public enum UpdateStatus {
-    UNKNOWN,
-    STARTING,
-    DOWNLOADING,
-    DOWNLOADED,
-    PAUSED,
-    PAUSED_ERROR,
-    DELETED,
-    VERIFYING,
-    VERIFIED,
-    VERIFICATION_FAILED,
-    INSTALLING,
-    INSTALLED,
-    INSTALLATION_FAILED,
-    INSTALLATION_CANCELLED,
-    INSTALLATION_SUSPENDED;
+public interface UpdateBaseInfo {
+    String getName();
 
-    public static final class Persistent {
-        public static final int UNKNOWN = 0;
-        public static final int INCOMPLETE = 1;
-        public static final int VERIFIED = 2;
-        public static final int LOCAL = 3;
-    }
+    String getDownloadId();
+
+    long getTimestamp();
+
+    String getType();
+
+    String getVersion();
+
+    String getDownloadUrl();
+
+    long getFileSize();
 }

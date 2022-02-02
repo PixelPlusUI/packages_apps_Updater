@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.updater.controller;
+package com.pixelplusui.updater.controller;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -34,15 +34,15 @@ import androidx.core.app.NotificationCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.preference.PreferenceManager;
 
-import com.crdroid.updater.R;
-import com.crdroid.updater.UpdaterReceiver;
-import com.crdroid.updater.UpdatesActivity;
-import com.crdroid.updater.misc.BuildInfoUtils;
-import com.crdroid.updater.misc.Constants;
-import com.crdroid.updater.misc.StringGenerator;
-import com.crdroid.updater.misc.Utils;
-import com.crdroid.updater.model.UpdateInfo;
-import com.crdroid.updater.model.UpdateStatus;
+import com.pixelplusui.updater.R;
+import com.pixelplusui.updater.UpdaterReceiver;
+import com.pixelplusui.updater.UpdatesActivity;
+import com.pixelplusui.updater.misc.BuildInfoUtils;
+import com.pixelplusui.updater.misc.Constants;
+import com.pixelplusui.updater.misc.StringGenerator;
+import com.pixelplusui.updater.misc.Utils;
+import com.pixelplusui.updater.model.UpdateInfo;
+import com.pixelplusui.updater.model.UpdateStatus;
 
 import java.io.IOException;
 import java.text.DateFormat;

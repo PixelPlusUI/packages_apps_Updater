@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.updater.controller;
+package com.pixelplusui.updater.controller;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -24,10 +24,10 @@ import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 
-import com.crdroid.updater.misc.Constants;
-import com.crdroid.updater.misc.Utils;
-import com.crdroid.updater.model.Update;
-import com.crdroid.updater.model.UpdateStatus;
+import com.pixelplusui.updater.misc.Constants;
+import com.pixelplusui.updater.misc.Utils;
+import com.pixelplusui.updater.model.Update;
+import com.pixelplusui.updater.model.UpdateStatus;
 
 import java.io.BufferedReader;
 import java.io.File;

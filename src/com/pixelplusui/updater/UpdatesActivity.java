@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.updater;
+package com.pixelplusui.updater;
 
 import android.app.Activity;
 import android.app.UiModeManager;
@@ -40,7 +40,6 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -49,7 +48,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.preference.PreferenceManager;
@@ -62,17 +60,17 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONException;
-import com.crdroid.updater.controller.UpdaterController;
-import com.crdroid.updater.controller.UpdaterService;
-import com.crdroid.updater.download.DownloadClient;
-import com.crdroid.updater.misc.BuildInfoUtils;
-import com.crdroid.updater.misc.Constants;
-import com.crdroid.updater.misc.FileUtils;
-import com.crdroid.updater.misc.StringGenerator;
-import com.crdroid.updater.misc.Utils;
-import com.crdroid.updater.model.Update;
-import com.crdroid.updater.model.UpdateInfo;
-import com.crdroid.updater.model.UpdateStatus;
+import com.pixelplusui.updater.controller.UpdaterController;
+import com.pixelplusui.updater.controller.UpdaterService;
+import com.pixelplusui.updater.download.DownloadClient;
+import com.pixelplusui.updater.misc.BuildInfoUtils;
+import com.pixelplusui.updater.misc.Constants;
+import com.pixelplusui.updater.misc.FileUtils;
+import com.pixelplusui.updater.misc.StringGenerator;
+import com.pixelplusui.updater.misc.Utils;
+import com.pixelplusui.updater.model.Update;
+import com.pixelplusui.updater.model.UpdateInfo;
+import com.pixelplusui.updater.model.UpdateStatus;
 
 import java.io.File;
 import java.io.IOException;

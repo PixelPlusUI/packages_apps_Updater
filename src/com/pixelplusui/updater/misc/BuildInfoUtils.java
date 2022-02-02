@@ -13,28 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.updater.model;
+package com.pixelplusui.updater.misc;
 
-import java.io.File;
+import android.os.SystemProperties;
 
-public interface UpdateInfo extends UpdateBaseInfo {
-    UpdateStatus getStatus();
+public final class BuildInfoUtils {
 
-    int getPersistentStatus();
+    private BuildInfoUtils() {
+    }
 
-    File getFile();
+    public static long getBuildDateTimestamp() {
+        return SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0);
+    }
 
-    long getFileSize();
-
-    int getProgress();
-
-    long getEta();
-
-    long getSpeed();
-
-    int getInstallProgress();
-
-    boolean getAvailableOnline();
-
-    boolean getFinalizing();
+    public static String getBuildVersion() {
+        return SystemProperties.get(Constants.PROP_BUILD_VERSION);
+    }
 }

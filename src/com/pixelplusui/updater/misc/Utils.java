@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.updater.misc;
+package com.pixelplusui.updater.misc;
 
 import android.app.AlarmManager;
 import android.content.ClipData;
@@ -24,7 +24,6 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.Environment;
 import android.os.SystemProperties;
 import android.os.storage.StorageManager;
 import android.preference.PreferenceManager;
@@ -34,12 +33,12 @@ import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import com.crdroid.updater.R;
-import com.crdroid.updater.UpdatesDbHelper;
-import com.crdroid.updater.controller.UpdaterService;
-import com.crdroid.updater.model.Update;
-import com.crdroid.updater.model.UpdateBaseInfo;
-import com.crdroid.updater.model.UpdateInfo;
+import com.pixelplusui.updater.R;
+import com.pixelplusui.updater.UpdatesDbHelper;
+import com.pixelplusui.updater.controller.UpdaterService;
+import com.pixelplusui.updater.model.Update;
+import com.pixelplusui.updater.model.UpdateBaseInfo;
+import com.pixelplusui.updater.model.UpdateInfo;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -49,7 +48,6 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Locale;
 import java.util.Set;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;

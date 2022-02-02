@@ -13,10 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.updater;
+package com.pixelplusui.updater.model;
 
-import androidx.appcompat.app.AppCompatActivity;
+import java.io.File;
 
-public abstract class UpdatesListActivity extends AppCompatActivity {
-    public abstract void showSnackbar(int stringId, int duration);
+public interface UpdateInfo extends UpdateBaseInfo {
+    UpdateStatus getStatus();
+
+    int getPersistentStatus();
+
+    File getFile();
+
+    long getFileSize();
+
+    int getProgress();
+
+    long getEta();
+
+    long getSpeed();
+
+    int getInstallProgress();
+
+    boolean getAvailableOnline();
+
+    boolean getFinalizing();
 }

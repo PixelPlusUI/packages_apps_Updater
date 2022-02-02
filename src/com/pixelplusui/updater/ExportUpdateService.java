@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.updater;
+package com.pixelplusui.updater;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -27,7 +27,7 @@ import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
 
-import com.crdroid.updater.misc.FileUtils;
+import com.pixelplusui.updater.misc.FileUtils;
 
 import java.io.File;
 import java.io.IOException;

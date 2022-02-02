@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.updater;
+package com.pixelplusui.updater;
 
 import android.content.Context;
 import android.content.Intent;
@@ -23,10 +23,8 @@ import android.content.res.Resources;
 import android.os.BatteryManager;
 import android.os.PowerManager;
 import android.preference.PreferenceManager;
-import android.text.SpannableString;
 import android.text.format.Formatter;
 import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -48,15 +46,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.snackbar.Snackbar;
 
-import com.crdroid.updater.controller.UpdaterController;
-import com.crdroid.updater.controller.UpdaterService;
-import com.crdroid.updater.misc.BuildInfoUtils;
-import com.crdroid.updater.misc.Constants;
-import com.crdroid.updater.misc.PermissionsUtils;
-import com.crdroid.updater.misc.StringGenerator;
-import com.crdroid.updater.misc.Utils;
-import com.crdroid.updater.model.UpdateInfo;
-import com.crdroid.updater.model.UpdateStatus;
+import com.pixelplusui.updater.controller.UpdaterController;
+import com.pixelplusui.updater.controller.UpdaterService;
+import com.pixelplusui.updater.misc.BuildInfoUtils;
+import com.pixelplusui.updater.misc.Constants;
+import com.pixelplusui.updater.misc.PermissionsUtils;
+import com.pixelplusui.updater.misc.StringGenerator;
+import com.pixelplusui.updater.misc.Utils;
+import com.pixelplusui.updater.model.UpdateInfo;
+import com.pixelplusui.updater.model.UpdateStatus;
 
 import java.io.File;
 import java.io.IOException;
