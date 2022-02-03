@@ -29,9 +29,9 @@
                 android:layout_height="wrap_content"
                 android:alpha="0.87"
                 android:drawablePadding="8dp"
-                android:maxLines="1"
+                android:maxLines="2"
                 android:paddingBottom="8sp"
-                android:textColor="?android:attr/textColorPrimary"
+                android:textColor="@color/theme_accent"
                 android:textSize="16sp"
                 tools:text="PixelPlusUi 15.1" />
 

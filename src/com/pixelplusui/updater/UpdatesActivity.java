@@ -15,6 +15,7 @@
  */
 package com.pixelplusui.updater;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.UiModeManager;
 import android.content.BroadcastReceiver;
@@ -390,6 +391,7 @@ public class UpdatesActivity extends UpdatesListActivity {
         downloadClient.start();
     }
 
+    @SuppressLint("SetTextI18n")
     private void updateLastCheckedString() {
         final SharedPreferences preferences =
                 PreferenceManager.getDefaultSharedPreferences(this);
@@ -406,7 +408,7 @@ public class UpdatesActivity extends UpdatesListActivity {
 
         TextView headerBuildDate = (TextView) findViewById(R.id.header_build_date);
         headerBuildDate.setText(getString(R.string.current_build_date, StringGenerator.getDateLocalizedUTC(this,
-                DateFormat.LONG, BuildInfoUtils.getBuildDateTimestamp())));
+                DateFormat.LONG, BuildInfoUtils.getBuildDateTimestamp())) + " (" + StringGenerator.getTimeLocalizedUTC(this, BuildInfoUtils.getBuildDateTimestamp()) + ")");
 
         TextView headerBuildType = (TextView) findViewById(R.id.header_build_type);
         String buildType = Utils.getBuildType();

@@ -15,6 +15,7 @@
  */
 package com.pixelplusui.updater;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -226,6 +227,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         viewHolder.mBuildSize.setVisibility(View.VISIBLE);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, int i) {
         if (mDownloadIds == null) {
@@ -262,11 +264,11 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
         String buildDate = StringGenerator.getDateLocalizedUTC(mActivity,
                 DateFormat.LONG, update.getTimestamp());
-        String buildVersion = mActivity.getString(R.string.list_build_version,
-                update.getVersion());
+        String buildVersion =  update.getName();
         if(update.getVersion().isEmpty())
-            buildVersion = update.getName();
-        viewHolder.mBuildDate.setText(buildDate);
+            buildVersion = mActivity.getString(R.string.list_build_version,
+                    update.getVersion());
+        viewHolder.mBuildDate.setText(buildDate + " (" + StringGenerator.getTimeLocalizedUTC(mActivity.getApplicationContext(), update.getTimestamp()) + ")");
         viewHolder.mBuildVersion.setText(buildVersion);
         viewHolder.mBuildVersion.setCompoundDrawables(null, null, null, null);
 
