@@ -99,7 +99,7 @@ public class UpdatesActivity extends UpdatesListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_updates);
-
+        downloadUpdatesList(true);
         UiModeManager uiModeManager = (UiModeManager) getSystemService(UI_MODE_SERVICE);
         mIsTV = uiModeManager.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION;
 
