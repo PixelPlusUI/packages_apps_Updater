@@ -491,23 +491,6 @@ public class UpdatesActivity extends UpdatesListActivity {
             });
         }
 
-        ImageView gappsImage = (ImageView)findViewById(R.id.support_gapps);
-        String gapps = Utils.getGapps();
-        if (gapps == null || gapps.isEmpty()) {
-            gappsImage.setVisibility(View.GONE);
-        } else {
-            gappsImage.setVisibility(View.VISIBLE);
-            gappsImage.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    Intent intent = new Intent();
-                    intent.setAction(Intent.ACTION_VIEW);
-                    intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                    intent.setData(Uri.parse(gapps));
-                    startActivity(intent);
-                    }
-            });
-        }
-
         ImageView firmwareImage = (ImageView)findViewById(R.id.support_firmware);
         String firmware = Utils.getFirmware();
         if (firmware == null || firmware.isEmpty()) {
