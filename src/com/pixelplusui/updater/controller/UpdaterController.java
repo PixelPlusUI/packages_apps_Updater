@@ -38,6 +38,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 
 public class UpdaterController {
@@ -460,7 +461,7 @@ public class UpdaterController {
         if (!mDownloads.containsKey(downloadId) || isDownloading(downloadId)) {
             return false;
         }
-        Update update = mDownloads.get(downloadId).mUpdate;
+        Update update = Objects.requireNonNull(mDownloads.get(downloadId)).mUpdate;
         update.setStatus(UpdateStatus.REMOVED);
         update.setProgress(0);
         update.setPersistentStatus(UpdateStatus.Persistent.UNKNOWN);
