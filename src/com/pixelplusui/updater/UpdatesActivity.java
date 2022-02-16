@@ -31,6 +31,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.StrictMode;
 import android.os.SystemProperties;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -73,8 +74,12 @@ import com.pixelplusui.updater.model.Update;
 import com.pixelplusui.updater.model.UpdateInfo;
 import com.pixelplusui.updater.model.UpdateStatus;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -112,7 +117,8 @@ public class UpdatesActivity extends UpdatesListActivity {
         if (animator instanceof SimpleItemAnimator) {
             ((SimpleItemAnimator) animator).setSupportsChangeAnimations(false);
         }
-
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
         mBroadcastReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
@@ -299,6 +305,7 @@ public class UpdatesActivity extends UpdatesListActivity {
             findViewById(R.id.no_new_updates_view).setVisibility(View.GONE);
             findViewById(R.id.recycler_view).setVisibility(View.VISIBLE);
             sortedUpdates.sort((u1, u2) -> Long.compare(u2.getTimestamp(), u1.getTimestamp()));
+            getTextFromUrl();
             for (UpdateInfo update : sortedUpdates) {
                 updateIds.add(update.getDownloadId());
             }
@@ -339,6 +346,40 @@ public class UpdatesActivity extends UpdatesListActivity {
             Log.e(TAG, "Could not read json", e);
             showSnackbar(R.string.snack_updates_check_failed, Snackbar.LENGTH_LONG);
         }
+    }
+
+    private void getTextFromUrl() throws IOException {
+        String theUrl = Utils.getChangelogURL(this);
+        Log.d("URL", theUrl);
+        StringBuilder content = new StringBuilder();
+
+        // many of these calls can throw exceptions, so i've just
+        // wrapped them all in one try/catch statement.
+        try
+        {
+            // create a url object
+            URL url = new URL(theUrl);
+
+            // create a urlconnection object
+            URLConnection urlConnection = url.openConnection();
+
+            // wrap the urlconnection in a bufferedreader
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+
+            String line;
+
+            // read from the urlconnection via the bufferedreader
+            while ((line = bufferedReader.readLine()) != null)
+            {
+                content.append(line).append("\n");
+            }
+            bufferedReader.close();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        Constants.changelogs = content.toString();
     }
 
     private void downloadUpdatesList(final boolean manualRefresh) {

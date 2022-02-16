@@ -42,7 +42,6 @@ public final class Constants {
     public static final String PROP_BUILD_VERSION = "org.pixelplusui.version";
     public static final String PROP_DEVICE = "ro.build.product";
     public static final String PROP_NEXT_DEVICE = "ro.updater.next_device";
-    public static final String PROP_UPDATER_ALLOW_DOWNGRADING = "pixelplusui.updater.allow_downgrading";
 
     public static final String PREF_INSTALL_OLD_TIMESTAMP = "install_old_timestamp";
     public static final String PREF_INSTALL_NEW_TIMESTAMP = "install_new_timestamp";
@@ -52,4 +51,5 @@ public final class Constants {
 
     public static final String UPDATE_RECOVERY_EXEC = "/vendor/bin/install-recovery.sh";
     public static final String UPDATE_RECOVERY_PROPERTY = "persist.vendor.recovery_update";
+    public static  String changelogs = "";
 }

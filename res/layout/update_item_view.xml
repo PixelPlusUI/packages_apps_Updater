@@ -67,7 +67,23 @@
                     android:visibility="invisible"
                     tools:text="162 of 300 MB (3 minutes left) • 65%"
                     tools:visibility="visible" />
-
+                <TextView
+                    android:id="@+id/changelogs_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/progress_text"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/theme_accent"
+                    android:text="Changelogs:"
+                    />
+                <TextView
+                    android:id="@+id/changelogs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/changelogs_title"
+                    android:ellipsize="marquee"
+                    tools:visibility="visible" />
                 <TextView
                     android:id="@+id/build_size"
                     android:layout_width="wrap_content"

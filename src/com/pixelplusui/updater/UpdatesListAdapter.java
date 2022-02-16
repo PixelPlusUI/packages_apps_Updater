@@ -98,6 +98,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         private TextView mBuildDate;
         private TextView mBuildVersion;
         private TextView mBuildSize;
+        private TextView clogs, clogs_title;
 
         private ProgressBar mProgressBar;
         private TextView mProgressText;
@@ -110,7 +111,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             mBuildDate = (TextView) view.findViewById(R.id.build_date);
             mBuildVersion = (TextView) view.findViewById(R.id.build_version);
             mBuildSize = (TextView) view.findViewById(R.id.build_size);
-
+            clogs = (TextView) view.findViewById(R.id.changelogs);
+            clogs_title = (TextView) view.findViewById(R.id.changelogs_title);
             mProgressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
             mProgressText = (TextView) view.findViewById(R.id.progress_text);
         }
@@ -270,6 +272,17 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                     update.getVersion());
         viewHolder.mBuildDate.setText(buildDate + " (" + StringGenerator.getTimeLocalizedUTC(mActivity.getApplicationContext(), update.getTimestamp()) + ")");
         viewHolder.mBuildVersion.setText(buildVersion);
+        if(update.getPersistentStatus() == UpdateStatus.Persistent.LOCAL){
+            viewHolder.clogs.setVisibility(View.INVISIBLE);
+            viewHolder.clogs_title.setVisibility(View.INVISIBLE);
+        }
+        else {
+            viewHolder.clogs.setVisibility(View.VISIBLE);
+            viewHolder.clogs_title.setVisibility(View.VISIBLE);
+        }
+        if(Constants.changelogs!=null) {
+            viewHolder.clogs.setText(Constants.changelogs);
+        }
         viewHolder.mBuildVersion.setCompoundDrawables(null, null, null, null);
 
         if (activeLayout) {
