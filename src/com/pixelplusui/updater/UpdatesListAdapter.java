@@ -256,7 +256,6 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             case UpdateStatus.Persistent.VERIFIED:
                 activeLayout = update.getStatus() == UpdateStatus.INSTALLING;
                 break;
-            case UpdateStatus.Persistent.LOCAL:
             case UpdateStatus.Persistent.INCOMPLETE:
                 activeLayout = true;
                 break;
@@ -267,9 +266,6 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         String buildDate = StringGenerator.getDateLocalizedUTC(mActivity,
                 DateFormat.LONG, update.getTimestamp());
         String buildVersion =  update.getName();
-        if(update.getName().isEmpty())
-            buildVersion = mActivity.getString(R.string.list_build_version,
-                    update.getVersion());
         viewHolder.mBuildDate.setText(buildDate + " (" + StringGenerator.getTimeLocalizedUTC(mActivity.getApplicationContext(), update.getTimestamp()) + ")");
         viewHolder.mBuildVersion.setText(buildVersion);
         if(update.getPersistentStatus() == UpdateStatus.Persistent.LOCAL){

@@ -103,7 +103,7 @@ public class UpdaterController {
 
     private Map<String, DownloadEntry> mDownloads = new HashMap<>();
 
-    public void notifyUpdateChange(String downloadId) {
+    void notifyUpdateChange(String downloadId) {
         Intent intent = new Intent();
         intent.setAction(ACTION_UPDATE_STATUS);
         intent.putExtra(EXTRA_DOWNLOAD_ID, downloadId);
@@ -238,7 +238,7 @@ public class UpdaterController {
         };
     }
 
-    public void verifyUpdateAsync(final String downloadId) {
+    private void verifyUpdateAsync(final String downloadId) {
         mVerifyingUpdates.add(downloadId);
         new Thread(() -> {
             Update update = mDownloads.get(downloadId).mUpdate;
@@ -326,13 +326,6 @@ public class UpdaterController {
 
     private boolean addUpdate(final UpdateInfo updateInfo, boolean availableOnline) {
         Log.d(TAG, "Adding download: " + updateInfo.getDownloadId());
-        if(updateInfo.getPersistentStatus() == UpdateStatus.Persistent.LOCAL){
-            for (DownloadEntry entry : mDownloads.values()) {
-                if(entry.mUpdate.getFile().getPath().equals(updateInfo.getFile().getPath())){
-                    return false;
-                }
-            }
-        }
         if (mDownloads.containsKey(updateInfo.getDownloadId())) {
             Log.d(TAG, "Download (" + updateInfo.getDownloadId() + ") already added");
             Update updateAdded = mDownloads.get(updateInfo.getDownloadId()).mUpdate;

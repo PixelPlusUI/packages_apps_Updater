@@ -18,9 +18,4 @@
         android:title="@string/menu_show_changelog"
         android:iconTint="@color/theme_accent"
         app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/menu_local_update"
-        android:title="@string/menu_local_update"
-        android:iconTint="@color/theme_accent"
-        app:showAsAction="never" />
 </menu>

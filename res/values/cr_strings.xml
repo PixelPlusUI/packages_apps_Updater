@@ -18,8 +18,6 @@
 
     <string name="blocked_update_dialog_message_custom">This update cannot be installed using the updater app. Try installing update via recovery.</string>
 
-    <string name="menu_local_update">Local installation</string>
-
     <string name="maintainer_name">Maintainer: <xliff:g id="maintainer" example="Maintainer Name">%1$s</xliff:g></string>
 
     <string name="support_links">Support links:</string>
