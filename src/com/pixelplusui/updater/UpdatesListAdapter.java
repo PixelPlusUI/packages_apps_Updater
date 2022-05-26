@@ -269,14 +269,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         String buildVersion =  update.getName();
         viewHolder.mBuildDate.setText(buildDate + " (" + StringGenerator.getTimeLocalizedUTC(mActivity.getApplicationContext(), update.getTimestamp()) + ")");
         viewHolder.mBuildVersion.setText(buildVersion);
-        if(update.getPersistentStatus() == UpdateStatus.Persistent.LOCAL){
-            viewHolder.clogs.setVisibility(View.INVISIBLE);
-            viewHolder.clogs_title.setVisibility(View.INVISIBLE);
-        }
-        else {
-            viewHolder.clogs.setVisibility(View.VISIBLE);
-            viewHolder.clogs_title.setVisibility(View.VISIBLE);
-        }
+        viewHolder.clogs.setVisibility(View.VISIBLE);
+        viewHolder.clogs_title.setVisibility(View.VISIBLE);
         if(Constants.changelogs!=null) {
             viewHolder.clogs.setText(Constants.changelogs);
         }

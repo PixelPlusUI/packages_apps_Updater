@@ -155,10 +155,10 @@ class ABUpdateInstaller {
         return sInstance;
     }
 
-    public boolean install(String downloadId) {
+    public void install(String downloadId) {
         if (isInstallingUpdate(mContext)) {
             Log.e(TAG, "Already installing an update");
-            return false;
+            return;
         }
 
         mDownloadId = downloadId;
@@ -173,7 +173,7 @@ class ABUpdateInstaller {
             mUpdaterController.getActualUpdate(downloadId)
                     .setStatus(UpdateStatus.INSTALLATION_FAILED);
             mUpdaterController.notifyUpdateChange(downloadId);
-            return false;
+            return;
         }
 
         long offset;
@@ -198,7 +198,7 @@ class ABUpdateInstaller {
             mUpdaterController.getActualUpdate(mDownloadId)
                     .setStatus(UpdateStatus.INSTALLATION_FAILED);
             mUpdaterController.notifyUpdateChange(mDownloadId);
-            return false;
+            return;
         }
 
         if (!mBound) {
@@ -208,7 +208,7 @@ class ABUpdateInstaller {
                 mUpdaterController.getActualUpdate(downloadId)
                         .setStatus(UpdateStatus.INSTALLATION_FAILED);
                 mUpdaterController.notifyUpdateChange(downloadId);
-                return false;
+                return;
             }
         }
 
@@ -226,7 +226,6 @@ class ABUpdateInstaller {
                 .putString(PREF_INSTALLING_AB_ID, mDownloadId)
                 .apply();
 
-        return true;
     }
 
     public boolean reconnect() {
