@@ -522,12 +522,13 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
 
         TextView headerBuildType = (TextView) findViewById(R.id.header_build_type);
         String buildType = Utils.getBuildType();
+        LinearLayout supportLayout = (LinearLayout)this.findViewById(R.id.support_icons);
         if (buildType == null || buildType.isEmpty()) {
             headerBuildType.setText(getString(R.string.build_type_unknown));
-            LinearLayout supportLayout=(LinearLayout)this.findViewById(R.id.support_icons);
             supportLayout.setVisibility(LinearLayout.GONE);
         } else {
             headerBuildType.setText(getString(R.string.current_build_type, buildType));
+            supportLayout.setVisibility(LinearLayout.VISIBLE);
         }
 
         TextView MaintainerName = (TextView) findViewById(R.id.maintainer_name);
