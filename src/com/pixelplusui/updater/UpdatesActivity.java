@@ -718,18 +718,12 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                 view.findViewById(R.id.preferences_auto_updates_check_interval);
         Switch autoDelete = view.findViewById(R.id.preferences_auto_delete_updates);
         Switch dataWarning = view.findViewById(R.id.preferences_mobile_data_warning);
-        Switch abPerfMode = view.findViewById(R.id.preferences_ab_perf_mode);
         Switch updateRecovery = view.findViewById(R.id.preferences_update_recovery);
-
-        if (!Utils.isABDevice()) {
-            abPerfMode.setVisibility(View.GONE);
-        }
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         autoCheckInterval.setSelection(Utils.getUpdateCheckSetting(this));
         autoDelete.setChecked(prefs.getBoolean(Constants.PREF_AUTO_DELETE_UPDATES, false));
         dataWarning.setChecked(prefs.getBoolean(Constants.PREF_MOBILE_DATA_WARNING, true));
-        abPerfMode.setChecked(prefs.getBoolean(Constants.PREF_AB_PERF_MODE, true));
 
         if (getResources().getBoolean(R.bool.config_hideRecoveryUpdate)) {
             // Hide the update feature if explicitely requested.
@@ -770,8 +764,6 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                                     autoDelete.isChecked())
                             .putBoolean(Constants.PREF_MOBILE_DATA_WARNING,
                                     dataWarning.isChecked())
-                            .putBoolean(Constants.PREF_AB_PERF_MODE,
-                                    abPerfMode.isChecked())
                             .apply();
 
                     if (Utils.isUpdateCheckEnabled(this)) {
@@ -780,11 +772,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
                         UpdatesCheckReceiver.cancelRepeatingUpdatesCheck(this);
                         UpdatesCheckReceiver.cancelUpdatesCheck(this);
                     }
-
-                    if (Utils.isABDevice()) {
-                        boolean enableABPerfMode = abPerfMode.isChecked();
-                        mUpdaterService.getUpdaterController().setPerformanceMode(enableABPerfMode);
-                    }
+                    
                     if (Utils.isRecoveryUpdateExecPresent()) {
                         boolean enableRecoveryUpdate = updateRecovery.isChecked();
                         SystemProperties.set(Constants.UPDATE_RECOVERY_PROPERTY,
